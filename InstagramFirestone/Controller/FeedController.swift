@@ -43,7 +43,7 @@ extension FeedController {
     }
 }
 
-//MARK: - UICollectionViewDelegateFlowLayout
+//MARK: -  UICollectionViewDelegateFlowLayout
 
 extension FeedController: UICollectionViewDelegateFlowLayout {
     

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21EC19A2A5595E000E1BF51 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EC1992A5595E000E1BF51 /* CustomTextField.swift */; };
+		C21EC19C2A55A23000E1BF51 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EC19B2A55A23000E1BF51 /* CustomButton.swift */; };
+		C22C81962A530A9F004600E5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C81952A530A9F004600E5 /* LoginController.swift */; };
+		C22C81982A530AAD004600E5 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C81972A530AAD004600E5 /* RegisterationController.swift */; };
 		C2EE75712A504B0F00FAD6D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75702A504B0F00FAD6D0 /* AppDelegate.swift */; };
 		C2EE75732A504B0F00FAD6D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75722A504B0F00FAD6D0 /* SceneDelegate.swift */; };
 		C2EE75752A504B0F00FAD6D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75742A504B0F00FAD6D0 /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C21EC1992A5595E000E1BF51 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		C21EC19B2A55A23000E1BF51 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C22C81952A530A9F004600E5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C22C81972A530AAD004600E5 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
 		C2EE756D2A504B0F00FAD6D0 /* InstagramFirestone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EE75702A504B0F00FAD6D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2EE75722A504B0F00FAD6D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C22C81942A530A89004600E5 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C22C81952A530A9F004600E5 /* LoginController.swift */,
+				C22C81972A530AAD004600E5 /* RegisterationController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		C2EE75642A504B0F00FAD6D0 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +124,7 @@
 		C2EE75862A504B3400FAD6D0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C22C81942A530A89004600E5 /* Authentication */,
 				C2EE758A2A504BE500FAD6D0 /* MainTabController.swift */,
 				C2EE758C2A5051DC00FAD6D0 /* FeedController.swift */,
 				C2EE758E2A5051EC00FAD6D0 /* SearchController.swift */,
@@ -128,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				C2EE75982A50798800FAD6D0 /* FeedCell.swift */,
+				C21EC1992A5595E000E1BF51 /* CustomTextField.swift */,
+				C21EC19B2A55A23000E1BF51 /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,17 +230,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21EC19A2A5595E000E1BF51 /* CustomTextField.swift in Sources */,
 				C2EE75752A504B0F00FAD6D0 /* ViewController.swift in Sources */,
+				C22C81962A530A9F004600E5 /* LoginController.swift in Sources */,
 				C2EE75992A50798800FAD6D0 /* FeedCell.swift in Sources */,
 				C2EE75912A5051F700FAD6D0 /* ImageSelectorController.swift in Sources */,
 				C2EE75932A50520100FAD6D0 /* NotificationController.swift in Sources */,
 				C2EE758F2A5051EC00FAD6D0 /* SearchController.swift in Sources */,
 				C2EE75712A504B0F00FAD6D0 /* AppDelegate.swift in Sources */,
 				C2EE75952A50521100FAD6D0 /* ProfileController.swift in Sources */,
+				C22C81982A530AAD004600E5 /* RegisterationController.swift in Sources */,
 				C2EE758D2A5051DC00FAD6D0 /* FeedController.swift in Sources */,
 				C2EE758B2A504BE500FAD6D0 /* MainTabController.swift in Sources */,
 				C2EE759B2A507A7F00FAD6D0 /* Extensions.swift in Sources */,
 				C2EE75732A504B0F00FAD6D0 /* SceneDelegate.swift in Sources */,
+				C21EC19C2A55A23000E1BF51 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
