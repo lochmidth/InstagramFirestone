@@ -11,6 +11,7 @@
 		C21EC19C2A55A23000E1BF51 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21EC19B2A55A23000E1BF51 /* CustomButton.swift */; };
 		C22C81962A530A9F004600E5 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C81952A530A9F004600E5 /* LoginController.swift */; };
 		C22C81982A530AAD004600E5 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C81972A530AAD004600E5 /* RegisterationController.swift */; };
+		C26E437C2A56FAFA00383006 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E437B2A56FAFA00383006 /* AuthenticationViewModel.swift */; };
 		C2EE75712A504B0F00FAD6D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75702A504B0F00FAD6D0 /* AppDelegate.swift */; };
 		C2EE75732A504B0F00FAD6D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75722A504B0F00FAD6D0 /* SceneDelegate.swift */; };
 		C2EE75752A504B0F00FAD6D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE75742A504B0F00FAD6D0 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		C21EC19B2A55A23000E1BF51 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C22C81952A530A9F004600E5 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C22C81972A530AAD004600E5 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
+		C26E437B2A56FAFA00383006 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		C2EE756D2A504B0F00FAD6D0 /* InstagramFirestone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EE75702A504B0F00FAD6D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2EE75722A504B0F00FAD6D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		C2EE75872A504B3600FAD6D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C26E437B2A56FAFA00383006 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				C2EE75752A504B0F00FAD6D0 /* ViewController.swift in Sources */,
 				C22C81962A530A9F004600E5 /* LoginController.swift in Sources */,
 				C2EE75992A50798800FAD6D0 /* FeedCell.swift in Sources */,
+				C26E437C2A56FAFA00383006 /* AuthenticationViewModel.swift in Sources */,
 				C2EE75912A5051F700FAD6D0 /* ImageSelectorController.swift in Sources */,
 				C2EE75932A50520100FAD6D0 /* NotificationController.swift in Sources */,
 				C2EE758F2A5051EC00FAD6D0 /* SearchController.swift in Sources */,
