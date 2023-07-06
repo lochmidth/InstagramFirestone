@@ -11,6 +11,8 @@ class LoginController: UIViewController {
     
     //MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         
         let iv = UIImageView()
@@ -19,15 +21,26 @@ class LoginController: UIViewController {
         return iv
     }()
     
+    private let sloganTextField: UITextField = {
+        
+        let tf = UITextField()
+        tf.text = "by alphanogn"
+        tf.textColor = .white
+        return tf
+    }()
+    
     private let emailTextField: CustomTextField = {
         
         let tf = CustomTextField(placeholder: "Email")
+        tf.textContentType = .emailAddress
+
         return tf
     }()
     
     private let passwordTextField: CustomTextField = {
         
         let tf = CustomTextField(placeholder: "Password")
+        tf.textContentType = .password
         tf.isSecureTextEntry = true
         return tf
     }()
@@ -59,6 +72,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        configureNotificationObservers()
     }
     
     //MARK: - Actions
@@ -67,6 +81,16 @@ class LoginController: UIViewController {
         
         let controller = RegisterationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        updateForm()
     }
     
     //MARK: - Helpers
@@ -83,12 +107,17 @@ class LoginController: UIViewController {
         iconImage.setDimensions(height: 80, width: 120)
         iconImage.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 32)
         
+        view.addSubview(sloganTextField)
+        sloganTextField.centerX(inView: view)
+        sloganTextField.setDimensions(height: 20, width: 110)
+        sloganTextField.anchor(top: iconImage.bottomAnchor)
+        
         let stack = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton, forgotPasswordButton])
         stack.axis = .vertical
         stack.spacing = 20
         
         view.addSubview(stack)
-        stack.anchor(top: iconImage.bottomAnchor,
+        stack.anchor(top: sloganTextField.bottomAnchor,
                      left: view.leftAnchor,
                      right: view.rightAnchor,
                      paddingTop: 32, paddingLeft: 32, paddingRight: 32)
@@ -96,5 +125,22 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    func configureNotificationObservers() {
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+}
+
+//MARK: - FormViewModel
+
+extension LoginController: FormViewModel {
+    func updateForm() {
+        
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
     }
 }
