@@ -48,6 +48,7 @@ class LoginController: UIViewController {
     private let loginButton: CustomButton = {
         
         let button = CustomButton(placeholder: "Log In")
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -76,6 +77,20 @@ class LoginController: UIViewController {
     }
     
     //MARK: - Actions
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthService.logInUser(withEmail: email, password: password) { (result, error) in
+            
+            if let error = error {
+                print("DEBUG: Failed to Log user in, \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true)
+        }
+    }
     
     @objc func handleShowSignUp() {
         
