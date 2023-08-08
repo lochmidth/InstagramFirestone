@@ -12,9 +12,7 @@ class UserCell: UITableViewCell {
     //MARK: - Properties
     
     var viewmodel: UserCellViewModel? {
-        didSet {
-            configure()
-        }
+        didSet { configure() }
     }
     
     private let profileImageView: UIImageView = {
