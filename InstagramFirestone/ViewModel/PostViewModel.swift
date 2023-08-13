@@ -8,7 +8,7 @@
 import UIKit
 
 struct PostViewModel {
-    let post: Post
+    var post: Post
     
     var imageUrl: URL? {
         return URL(string: post.imageUrl)
@@ -20,6 +20,14 @@ struct PostViewModel {
     
     var likes: Int {
         return post.likes
+    }
+    
+    var likeButtonTintColor: UIColor {
+        return post.didLike ? .red : .black
+    }
+    
+    var likeButtonImage: UIImage? {
+        return post.didLike ? UIImage(named: "like_selected") : UIImage(named: "like_unselected")
     }
     
     var likesLabelText: String {
