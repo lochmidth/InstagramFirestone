@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2177ECB2A8BB13800DEF212 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2177ECA2A8BB13800DEF212 /* NotificationCell.swift */; };
+		C2177ECD2A8BBFFF00DEF212 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2177ECC2A8BBFFF00DEF212 /* Notification.swift */; };
+		C2177ECF2A8BC4AB00DEF212 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2177ECE2A8BC4AB00DEF212 /* NotificationService.swift */; };
+		C2177ED12A8C192B00DEF212 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2177ED02A8C192B00DEF212 /* NotificationViewModel.swift */; };
 		C21A2CE02A8915D400767642 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A2CDF2A8915D400767642 /* CommentInputAccesoryView.swift */; };
 		C21A2CE22A89277400767642 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A2CE12A89277400767642 /* CommentService.swift */; };
 		C21A2CE42A892ECF00767642 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21A2CE32A892ECF00767642 /* Comment.swift */; };
@@ -55,6 +59,10 @@
 		700EF852A0A108810AC9AEA9 /* Pods-InstagramFirestone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestone.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirestone/Pods-InstagramFirestone.release.xcconfig"; sourceTree = "<group>"; };
 		B490675643894ED9F0FF9314 /* Pods-InstagramFirestone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramFirestone/Pods-InstagramFirestone.debug.xcconfig"; sourceTree = "<group>"; };
 		C1C5F04FA2897DF890461717 /* Pods_InstagramFirestone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirestone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2177ECA2A8BB13800DEF212 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		C2177ECC2A8BBFFF00DEF212 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C2177ECE2A8BC4AB00DEF212 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C2177ED02A8C192B00DEF212 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		C21A2CDF2A8915D400767642 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
 		C21A2CE12A89277400767642 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		C21A2CE32A892ECF00767642 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 				C2CE6E1B2A605ECD002AC7CF /* UserService.swift */,
 				C23101672A828DD400873B70 /* PostService.swift */,
 				C21A2CE12A89277400767642 /* CommentService.swift */,
+				C2177ECE2A8BC4AB00DEF212 /* NotificationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 				C2473F5A2A77D7BB0058016A /* UserCellViewModel.swift */,
 				C231016B2A82DDB000873B70 /* PostViewModel.swift */,
 				C21A2CE52A894C4C00767642 /* CommentViewModel.swift */,
+				C2177ED02A8C192B00DEF212 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 				C2DCB7602A7D236B0022121F /* InputTextView.swift */,
 				C2EDC7CF2A8664F500EC9218 /* CommentCell.swift */,
 				C21A2CDF2A8915D400767642 /* CommentInputAccesoryView.swift */,
+				C2177ECA2A8BB13800DEF212 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				C2CE6E1F2A606177002AC7CF /* User.swift */,
 				C23101692A82D9BB00873B70 /* Post.swift */,
 				C21A2CE32A892ECF00767642 /* Comment.swift */,
+				C2177ECC2A8BBFFF00DEF212 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +396,7 @@
 				C2EC56B02A57447E008450B2 /* AuthService.swift in Sources */,
 				C2CE6E222A606617002AC7CF /* ProfileHeaderViewModel.swift in Sources */,
 				C21A2CE42A892ECF00767642 /* Comment.swift in Sources */,
+				C2177ED12A8C192B00DEF212 /* NotificationViewModel.swift in Sources */,
 				C22C81962A530A9F004600E5 /* LoginController.swift in Sources */,
 				C2DCB75F2A7D1E9D0022121F /* UploadPostController.swift in Sources */,
 				C2EDC7CE2A86622E00EC9218 /* CommentController.swift in Sources */,
@@ -396,12 +409,15 @@
 				C2D8447F2A5D925100388540 /* ProfileHeader.swift in Sources */,
 				C21A2CE02A8915D400767642 /* CommentInputAccesoryView.swift in Sources */,
 				C2EE75932A50520100FAD6D0 /* NotificationController.swift in Sources */,
+				C2177ECD2A8BBFFF00DEF212 /* Notification.swift in Sources */,
 				C2EE758F2A5051EC00FAD6D0 /* SearchController.swift in Sources */,
 				C2DCB7612A7D236B0022121F /* InputTextView.swift in Sources */,
 				C292456A2A71500300D4D973 /* UserCell.swift in Sources */,
 				C2EE75712A504B0F00FAD6D0 /* AppDelegate.swift in Sources */,
 				C21A2CE62A894C4C00767642 /* CommentViewModel.swift in Sources */,
 				C2473F5B2A77D7BB0058016A /* UserCellViewModel.swift in Sources */,
+				C2177ECB2A8BB13800DEF212 /* NotificationCell.swift in Sources */,
+				C2177ECF2A8BC4AB00DEF212 /* NotificationService.swift in Sources */,
 				C2EE75952A50521100FAD6D0 /* ProfileController.swift in Sources */,
 				C22C81982A530AAD004600E5 /* RegisterationController.swift in Sources */,
 				C23101682A828DD400873B70 /* PostService.swift in Sources */,
