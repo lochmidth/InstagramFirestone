@@ -10,6 +10,7 @@ import UIKit
 protocol FeedCellDelegate: AnyObject {
     func cell(_ cell: FeedCell, wantsToShowCommentFor post: Post)
     func cell(_ cell: FeedCell, didLike post: Post)
+    func cell(_ cell: FeedCell,  wantsToShowProfileFor uid: String)
 }
 
 class FeedCell: UICollectionViewCell {
@@ -35,7 +36,7 @@ class FeedCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 13)
-        button.addTarget(self, action: #selector(didTapUsername), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showUserProfile), for: .touchUpInside)
         return button
     }()
     
@@ -129,8 +130,9 @@ class FeedCell: UICollectionViewCell {
     
     //MARK: - Actions
     
-    @objc func didTapUsername() {
-        print("DEBUG: did tap username")
+    @objc func showUserProfile() {
+        guard let viewModel = viewModel else { return }
+        delegate?.cell(self, wantsToShowProfileFor: viewModel.post.ownerUid)
     }
     
     @objc func didTapComments() {
@@ -151,6 +153,11 @@ class FeedCell: UICollectionViewCell {
         captionLabel.text = viewModel.caption
         postImageView.sd_setImage(with: viewModel.imageUrl)
         profileImageView.sd_setImage(with: viewModel.userProfileImageUrl)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tap)
+        
         likesLabel.text = viewModel.likesLabelText
         likeButton.tintColor = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
