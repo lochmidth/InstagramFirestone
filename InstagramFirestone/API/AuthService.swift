@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
+
+typealias SendPasswordResetCallback = (Error?) -> Void
 
 struct AuthCredentials {
     
@@ -46,5 +49,9 @@ struct AuthService {
                 COLLECTION_USERS.document(uid).setData(data, completion: completion)
             }
         }
+    }
+    
+    static func resetPassword(withEmail email: String, completion: SendPasswordResetCallback?) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: completion)
     }
 }

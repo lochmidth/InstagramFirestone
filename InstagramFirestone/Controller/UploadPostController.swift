@@ -72,7 +72,7 @@ class UploadPostController: UIViewController {
             self.showLoader(false)
             
             if let error = error {
-                print("DEBUG: Failed to upload post, \(error.localizedDescription)")
+                self.showMessage(withTitle: "Oops!", message: error.localizedDescription)
                 return
             }
             

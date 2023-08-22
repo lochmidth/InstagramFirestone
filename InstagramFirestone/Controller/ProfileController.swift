@@ -139,7 +139,7 @@ extension ProfileController: ProfileHeaderDelegate {
         guard let currentUser = tab.user else { return }
         
         if user.isCurrentUser {
-            print("DEBUG: Show edit profile here...")
+            showMessage(withTitle: "WIP", message: "Show Edit Profile here...")
         }
         
         else if user.isFollowed {

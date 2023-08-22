@@ -46,6 +46,18 @@ struct PostViewModel {
         return post.ownerUsername
     }
     
+    var timestampString: String? {
+        var calender = Calendar.current
+        calender.locale = Locale(identifier: "en")
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .full
+        formatter.calendar = calender
+        return formatter.string(from: post.timestamp.dateValue(), to: Date())
+    }
+    
     init(post: Post) {
         self.post = post
     }
