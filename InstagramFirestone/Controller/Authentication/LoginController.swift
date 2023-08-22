@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AuthenticationDelegate: class {
+protocol AuthenticationDelegate: AnyObject {
     func authenticationDidComplete()
 }
 
@@ -61,6 +61,7 @@ class LoginController: UIViewController {
         
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Forgot your password?", secondPart: "Get help signing in.")
+        button.addTarget(self, action: #selector(handleShowResetPasswork), for: .touchUpInside)
         return button
     }()
     
@@ -86,10 +87,13 @@ class LoginController: UIViewController {
     @objc func handleLogin() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        
+        showLoader(true)
         AuthService.logInUser(withEmail: email, password: password) { (result, error) in
-            
             if let error = error {
-                print("DEBUG: Failed to Log user in, \(error.localizedDescription)")
+                self.showLoader(false)
+                self.showMessage(withTitle: "Oops!", message: error.localizedDescription)
+                self.passwordTextField.text = ""
                 return
             }
             
@@ -101,6 +105,13 @@ class LoginController: UIViewController {
         
         let controller = RegisterationController()
         controller.delegate = delegate
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func handleShowResetPasswork() {
+        let controller = ResetPasswordController()
+        controller.delegate = self
+        controller.email = emailTextField.text
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -163,5 +174,14 @@ extension LoginController: FormViewModel {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
         loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
         loginButton.isEnabled = viewModel.formIsValid
+    }
+}
+
+//MARK: - ResetPasswordControllerDelegate
+
+extension LoginController: ResetPasswordControllerDelegate {
+    func controllerDidSendResetPasswordLink(_ controller: ResetPasswordController) {
+        navigationController?.popViewController(animated: true)
+        showMessage(withTitle: "Success", message: "We sent a link to your email to reset your password")
     }
 }
